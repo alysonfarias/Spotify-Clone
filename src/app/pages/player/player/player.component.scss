@@ -1,4 +1,9 @@
 :host {
   display: flex;
 
+  .container-routes{
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
 }

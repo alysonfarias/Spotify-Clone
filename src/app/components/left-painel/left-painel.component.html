@@ -45,23 +45,10 @@
            [icon]="playlistIcon">
           </fa-icon>
         </app-menu-bottom>
-        <app-menu-bottom
-        *ngFor="let playlist of playlists"
-        [description]="playlist.name"
-        [isSelected]="selectedMenu == playlist.id"
-        (click)="clickButton(playlist.id)">
-          <fa-icon
-           [icon]="playlistIcon">
-          </fa-icon>
-        </app-menu-bottom>
-
-
       </div>
     </div>
 </div>
 
-
-
 <div class="user-info">
-
+  <app-user-footer></app-user-footer>
 </div>

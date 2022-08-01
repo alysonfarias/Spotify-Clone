@@ -2,6 +2,7 @@ import { SpotifyService } from './../../services/spotify.service';
 import { IPlaylist } from './../../interfaces/IPlaylist';
 import { Component, OnInit } from '@angular/core';
 import { faGuitar, faHome, faMusic, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-painel',
@@ -18,7 +19,9 @@ export class LeftPainelComponent implements OnInit {
   artistIcon = faGuitar;
   playlistIcon = faMusic;
 
-  constructor(private spotifyService: SpotifyService) { }
+  constructor(
+    private spotifyService: SpotifyService,
+    private router: Router) { }
 
   ngOnInit(): void {
     this.getPlaylists();
@@ -26,14 +29,10 @@ export class LeftPainelComponent implements OnInit {
 
   clickButton(button: string){
     this.selectedMenu = button;
+    this.router.navigateByUrl(`/player/${button}`);
   }
 
   async getPlaylists(){
-    console.log('getPlaylists');
    this.playlists = await this.spotifyService.getUserPlaylists();
-   console.log('getPlaylists2');
-   console.log(this.playlists);
-
-
   }
 }

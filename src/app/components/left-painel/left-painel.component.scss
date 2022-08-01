@@ -3,6 +3,9 @@
 $h-spotify-logo: 120px;
 $h-menu-option: 150px;
 $h-between-menus: 10px;
+$h-user-footer: 70px;
+
+$h-disregard: calc($h-spotify-logo + $h-user-footer + $h-menu-option);
 
 :host {
   max-width: 300px;
@@ -54,7 +57,7 @@ $h-between-menus: 10px;
 
       .playlist-scroll {
         width: 100%;
-        max-height: 50vh;
+        max-height: calc(95vh - $h-disregard);
         overflow-y: auto;
 
         &::-webkit-scrollbar{
@@ -66,5 +69,14 @@ $h-between-menus: 10px;
         }
       }
     }
+  }
+
+  .user-info {
+    flex-grow: 0;
+    display: block;
+    bottom: 0;
+    align-self: flex-end;
+    height: $h-user-footer;
+    width: 100%;
   }
 }
