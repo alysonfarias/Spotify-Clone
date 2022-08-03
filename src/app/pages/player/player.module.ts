@@ -1,3 +1,4 @@
+import { RightPainelComponent } from './../../components/right-painel/right-painel.component';
 import { TopArtistComponent } from './../../components/top-artist/top-artist.component';
 import { HomeComponent } from './../home/home.component';
 import { MenuBottomComponent } from './../../components/menu-bottom/menu-bottom.component';
@@ -19,7 +20,8 @@ import { UserFooterComponent } from 'src/app/components/user-footer/user-footer.
     MenuBottomComponent,
     UserFooterComponent,
     HomeComponent,
-    TopArtistComponent
+    TopArtistComponent,
+    RightPainelComponent
   ],
   imports: [
     CommonModule,
