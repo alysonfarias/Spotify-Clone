@@ -12,6 +12,7 @@ import { IMusic } from '../interfaces/IMusic';
 })
 export class SpotifyService {
 
+
   spotifyApi: Spotify.SpotifyWebApiJs = null;
   user: IUser;
 
@@ -95,5 +96,9 @@ export class SpotifyService {
     await this.spotifyApi.skipToNext();
   }
 
+  async getCurrentMusic(): Promise<IMusic>{
+    const music = await this.spotifyApi.getMyCurrentPlayingTrack();
+    return SpotifyTrackToMusic(music.item);
+  }
 
 }

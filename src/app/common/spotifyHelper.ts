@@ -1,3 +1,4 @@
+import { newMusic } from 'src/app/common/factory';
 import { IArtist } from '../interfaces/IArtist';
 import { IMusic } from '../interfaces/IMusic';
 import { IPlaylist } from '../interfaces/IPlaylist';
@@ -30,6 +31,9 @@ export function SpotifyArtistToArtist(artist: SpotifyApi.ArtistObjectFull): IArt
 }
 
 export function SpotifyTrackToMusic(spotifyTrack: SpotifyApi.TrackObjectFull): IMusic{
+
+  if(!spotifyTrack)
+    return newMusic();
 
   const msToMinutes = (ms: number) => {
     const data = addMilliseconds(new Date(0), ms);

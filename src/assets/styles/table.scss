@@ -4,7 +4,7 @@
   width: 100%;
   text-align: left ;
   table-layout: fixed;
-  border-collapse: separate	;
+  border-collapse: collapse	;
 
   .play {
     color: $primary-color;
@@ -55,6 +55,16 @@
       &-#{ $width } {
         width: #{ $width * 1%};
       }
+    }
+  }
+
+  .playing {
+    background-color: $white;
+    padding: 10px;
+    box-shadow: 0px 0px 15px $transparent-black;
+
+    td{
+      color: $primary-color;
     }
   }
 
